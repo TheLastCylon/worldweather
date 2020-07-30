@@ -1,0 +1,143 @@
+<h1>Welcome to the World Weather App.</h1>
+<h2>The quick and dirty</h2>
+<p>This is a quick and dirty demonstration of using Python to provide a rest-full API, <b><i>without</i></b> using a framework of any kind.</p>
+<p>The application grabs weather data from a provider site, which is then manipulated and formed for our purposes.
+ Although we have access to incredibly detailed data via our provider, we only use the humidity and temperature data-points for this demonstration.</p>
+<p>
+A few things to note about the API this app provides:
+    <ul>
+        <li>All interfaces are accessed via GET operation.</li>
+        <li><p>All interfaces require three URL parameters:</p>
+            <ol>
+                <li><b>city</b> - A valid city name</li>
+                <li><b>start_date</b> - A date in the form YYYY-MM-DD</li>
+                <li><b>end_date</b> - A date in the form YYYY-MM-DD</li>
+            </ol>
+            <p>Note that <b>end_date</b> must be a date that falls after <b>start_date</b> and that the two dates may not be more than <b>31</b> days apart.<br>
+               This limitation is on the part of the data provider.</p>
+        </li>
+        <li><p>Here follows a list of all the available API endpoints, details of each are discussed below:</p>
+            <ul>
+                <li>/wwapi/temperature/min</li>
+                <li>/wwapi/temperature/max</li>
+                <li>/wwapi/temperature/average</li>
+                <li>/wwapi/temperature/median</li>
+                <li>/wwapi/humidity/min</li>
+                <li>/wwapi/humidity/max</li>
+                <li>/wwapi/humidity/average</li>
+                <li>/wwapi/humidity/median</li>
+                <li>/wwapi/temperature</li>
+                <li>/wwapi/humidity</li>
+                <li>/wwapi/all</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+
+<p>Note: The examples below all use port 8080, this is the default port used by this app, but that can be adjusted by the user on the command line, when starting up the server.</p>
+
+<h2>Dealing with the heat and humidity</h2>
+<p>The provided API can be broken into two groups: Temperature and Humidity.</p>
+<h3>Temperature</h3>
+<ul>
+<!-- ========================================================================================================================= -->
+<li><h4>Minimum</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/temperature/min?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+    <code>{"temperature": {"min": 16.0}}</code></p>
+</li>
+
+<!-- ========================================================================================================================= -->
+<li><h4>Maximum</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/temperature/max?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"temperature": {"max": 16.0}}</code>
+</p></li>
+
+<!-- ========================================================================================================================= -->
+<li><h4>Average</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/temperature/average?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"temperature": {"average": 21.419354838709676}}</code>
+</li>
+
+<!-- ========================================================================================================================= -->
+<li><h4>Median</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/temperature/median?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"temperature": {"median": 21.0}}</code>
+</li>
+<!-- ========================================================================================================================= -->
+<li><h4>All Temperature data</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/temperature?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"temperature": {"min": 16.0, "max": 29.0, "median": 21.0, "average": 21.419354838709676}}</code>
+</li>
+</ul>
+
+<h3>Humidity</h3>
+<ul>
+<!-- ========================================================================================================================= -->
+<li><h4>Minimum</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/humidity/min?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"humidity": {"min": 36.0}}</code>
+</p></li>
+
+<!-- ========================================================================================================================= -->
+<li><h4>Maximum</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/humidity/max?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"humidity": {"max": 90.0}}</code>
+</p></li>
+
+<!-- ========================================================================================================================= -->
+<li><h4>Average</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/humidity/average?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"humidity": {"average": 68.58467741935483}}</code>
+</li>
+
+<!-- ========================================================================================================================= -->
+<li><h4>Median</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/humidity/median?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"humidity": {"median": 70.0}}</code>
+</li>
+
+<!-- ========================================================================================================================= -->
+<li><h4>All Humidity data</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/humidity?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"humidity": {"min": 36.0, "max": 90.0, "median": 70.0, "average": 68.58467741935483}}</code>
+</li>
+</ul>
+<ol>
+</ol>
+
+<h3>Feeling Greedy?</h3>
+<ul>
+<!-- ========================================================================================================================= -->
+<li><h4>Get everything</h4>
+<p>Request:
+   <code>http://localhost:8080/wwapi/all?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31</code></p>
+<p>Response:
+   <code>{"humidity": {"min": 36.0, "max": 90.0, "median": 70.0, "average": 68.58467741935483}, "temperature": {"min": 16.0, "max": 29.0, "median": 21.0, "average": 21.419354838709676}}</code>
+</p></li>
+</ul>
+
+<h3>Dealing with errors</h3>
+<p> All API errors will be reported as in the example below.</p>
+<p>Example:
+<code>{"ERROR": "Date values must be provided in YYYY-MM-DD format!"}</code> 
+</p>
