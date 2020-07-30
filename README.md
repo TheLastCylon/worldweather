@@ -22,52 +22,52 @@ Note that all intefaces are accessed via GET operations, and that they all requi
 
 ## Temperature
 ### Minimum
-Request:```http://localhost:8080/wwapi/temperature/min?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"temperature": {"min": 16.0}}```
+- Request:```http://localhost:8080/wwapi/temperature/min?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"temperature": {"min": 16.0}}```
 
 ### Maximum
-Request:```http://localhost:8080/wwapi/temperature/max?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"temperature": {"max": 16.0}}```
+- Request:```http://localhost:8080/wwapi/temperature/max?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"temperature": {"max": 16.0}}```
 
 ### Average
-Request:```http://localhost:8080/wwapi/temperature/average?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"temperature": {"average": 21.419354838709676}}```
+- Request:```http://localhost:8080/wwapi/temperature/average?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"temperature": {"average": 21.419354838709676}}```
 
 ### Median
-Request:```http://localhost:8080/wwapi/temperature/median?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"temperature": {"median": 21.0}}```
+- Request:```http://localhost:8080/wwapi/temperature/median?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"temperature": {"median": 21.0}}```
 
 ### All Temperature data
-Request:```http://localhost:8080/wwapi/temperature?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"temperature": {"min": 16.0, "max": 29.0, "median": 21.0, "average": 21.419354838709676}}```
+- Request:```http://localhost:8080/wwapi/temperature?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"temperature": {"min": 16.0, "max": 29.0, "median": 21.0, "average": 21.419354838709676}}```
 
 ## Humidity
 ### Minimum
-Request:```http://localhost:8080/wwapi/humidity/min?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"humidity": {"min": 36.0}}```
+- Request:```http://localhost:8080/wwapi/humidity/min?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"humidity": {"min": 36.0}}```
 
 ### Maximum
-Request:```http://localhost:8080/wwapi/humidity/max?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"humidity": {"max": 90.0}}```
+- Request:```http://localhost:8080/wwapi/humidity/max?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"humidity": {"max": 90.0}}```
 
 ### Average
-Request:```http://localhost:8080/wwapi/humidity/average?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"humidity": {"average": 68.58467741935483}}```
+- Request:```http://localhost:8080/wwapi/humidity/average?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"humidity": {"average": 68.58467741935483}}```
 
 ### Median
-Request:```http://localhost:8080/wwapi/humidity/median?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"humidity": {"median": 70.0}}```
+- Request:```http://localhost:8080/wwapi/humidity/median?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"humidity": {"median": 70.0}}```
 
 ### All Humidity data
-Request:```http://localhost:8080/wwapi/humidity?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"humidity": {"min": 36.0, "max": 90.0, "median": 70.0, "average": 68.58467741935483}}```
+- Request:```http://localhost:8080/wwapi/humidity?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"humidity": {"min": 36.0, "max": 90.0, "median": 70.0, "average": 68.58467741935483}}```
 
 ## Feeling Greedy?
 ### Get everything
-Request:```http://localhost:8080/wwapi/all?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
-Response: ```{"humidity": {"min": 36.0, "max": 90.0, "median": 70.0, "average": 68.58467741935483}, "temperature": {"min": 16.0, "max": 29.0, "median": 21.0, "average": 21.419354838709676}}```
+- Request:```http://localhost:8080/wwapi/all?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
+- Response: ```{"humidity": {"min": 36.0, "max": 90.0, "median": 70.0, "average": 68.58467741935483}, "temperature": {"min": 16.0, "max": 29.0, "median": 21.0, "average": 21.419354838709676}}```
 
 ## Dealing with errors
 All API errors will be reported as in the example below.
 
-Example: ```{"ERROR": "Date values must be provided in YYYY-MM-DD format!"}```
+- Example: ```{"ERROR": "Date values must be provided in YYYY-MM-DD format!"}```
