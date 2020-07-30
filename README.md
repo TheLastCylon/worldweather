@@ -12,10 +12,14 @@ It provides weather data such that one can access minimum, maximum, average and 
 You can start the server with the following command, executed on the command line: ```python3 ./worldweather.py```
 
 By default, the server will utilze port *8080* on *localhost*.
-This can be changed by passing in a port number on the command line. ```python3 ./worldweather.py 8000```
+This can be changed by passing in a port number on the command line. e.g.: ```python3 ./worldweather.py 8000```
 
 # The API
 The provided API can be broken into two groups: Temperature and Humidity.
+Note that all intefaces are accessed via GET operations, and that they all require city, start_date and end_date parameters.
+
+*start_date* and *end_date* must be in the YYYY-MM-DD format, and end_date must be after start_date by no more than 31.
+
 ## Temperature
 ### Minimum
 Request:```http://localhost:8080/wwapi/temperature/min?city=Cape%20Town&start_date=2020-01-01&end_date=2020-01-31```
