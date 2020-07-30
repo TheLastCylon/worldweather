@@ -3,7 +3,7 @@ This is a quick and dirty demonstration of using Python to provide a rest-full A
 It provides weather data such that one can access minimum, maximum, average and median results, of humidity and temperature, for a given city, over a specified period.
 
 # Assumptions
-- This requirement is of a hisorical nature. i.e. The user want's to access weather data from an historical perspective, meaning that future weather is not in question.
+- This requirement is of a hisorical nature. i.e. The user wants to access weather data from an historical perspective, meaning that future weather is not in question.
 - This implimentation will be using Python3.x
 - This implimentation will be running on a modern Linux system
 - The user will not be requesting data for more than 31 days at a time.
@@ -18,7 +18,7 @@ This can be changed by passing in a port number on the command line. e.g.: ```py
 The provided API can be broken into two groups: Temperature and Humidity.
 Note that all intefaces are accessed via GET operations, and that they all require city, start_date and end_date parameters.
 
-*start_date* and *end_date* must be in the YYYY-MM-DD format, and end_date must be after start_date by no more than 31.
+*start_date* and *end_date* must be in the YYYY-MM-DD format, and end_date must be after start_date by no more than 31 days.
 
 ## Temperature
 ### Minimum
